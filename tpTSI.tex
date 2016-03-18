@@ -1,0 +1,40 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel} 
+\usepackage{color}
+\usepackage{anysize}
+\usepackage{lmodern} % Pour changer le pack de police
+\usepackage{makeidx}
+\date{} % Pour mettre la date du jour, tapez \today 
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{wrapfig}
+\usepackage[linesnumbered]{algorithm2e} %pr le pseudo code
+ \usepackage{amsmath}
+ \usepackage{amsfonts}
+\usepackage{array}
+% les pacakage ci dessous permettent d'aller directement au liens
+\usepackage{url} % aller sur le site web
+
+
+\usepackage[colorlinks=true,linkcolor=PineGreen, urlcolor=PineGreen, citecolor=PineGreen]{hyperref} %aller dans un lien interne
+
+%************ section in green *****************
+\titleformat{\section}
+{\color{PineGreen}\normalfont\Large\bfseries}
+{\color{PineGreen}\thesection}{1em}{}
+%************************************************
+\begin{document}
+
+\fontfamily{phv}\selectfont
+
+\input{titre.tex}
+\tableofcontents
+\newpage
+\input{tp.tex}
+
+\end{document}
