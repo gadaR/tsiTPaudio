@@ -9,8 +9,28 @@ La bande de fréquence utile pour le signal est [0 2.8]
 \section{Filtre passe bas à réponse impulsionnelle finie}
 
 
-\section{Filtre en peigne}
+\subsection{ Partie théorique}
+Soit le filtre passe bas à réponse impulsionnelle finie :
+y(k) = x(k)+x(k-1)+...+x(k-D)\\
 
-\section{Filtre passe Tout}
+Écrire ce filtre sous forme récursive.
 
-\section{Réverbération}
+\begin{math}
+y(k) = x(k)+x(k-1)+...+x(k-D)\\
+y(k-1) = x(k-1)+x(k-2)+...+x(k-(D+1))\\
+y(k) = x(k)+y(k-1)-x(k-(D+1))\\
+y(k) - y(k-1)= x(k)-x(k-(D+1))\\
+Y(z) - z^{-1}Y(z)  = X(z)-z^{-(D+1)}X(z)\\
+Y(z) (1- z^{-1}) = X(z)(1-z^{-(D+1)})\\
+Y(z)=\frac{1-z^{-(D+1)}}{1- z^{-1}}X(z) \\
+\end{math}
+
+Fonction de transfert :\\
+$H(z)=\frac{1-z^{-(D+1)}}{1- z^{-1}}$\\
+
+Module : \\
+$H(f)=\frac{1-e^{-2\pi jfTe(D+1)}}{1- e^{-2\pi jfTe}}\\
+|H(f)|=\frac{|1-cos(2\pi jfTe(D+1))+j sin(2\pi jfTe(D+1))|}{|1-cos(2\pi jfTe)+j sin(2\pi jfTe)|}\\
+|H(f)|=\frac{(1-cos(2\pi jfTe(D+1)))^{2}+ sin^{2}(2\pi jfTe(D+1))}{(1-cos(2\pi jfTe))^{2}+ sin^{2}(2\pi jfTe)}\\
+|H(f)|=\frac{2-2cos(2\pi jfTe(D+1))}{2-2cos(2\pi jfTe)}\\
+$
