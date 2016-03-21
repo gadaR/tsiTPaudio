@@ -1,6 +1,104 @@
 
 \section{Filtre en peigne}
 
+\subsection{Partie théorique}
+
+Soit le filtre en peigne : $y(k)= x(k)+ x(k − D)$
+
+Donner la fonction de transfert en Z correspondant.
+
+$H(Z) = 1 + Z^{-D}$
+
+Calculer le module de ce filtre et le représenter.
+
+\begin{align*}
+  H(f) &= 1 + e^{-2\pi jfTeD}\\
+       &= 1 + cos(-2\pi fTeD) + jsin(-2\pi fTeD)\\
+       &= 1 + cos(2\pi fTeD) - jsin(2\pi fTeD)\\
+\end{align*}
+\begin{align*}
+  |H(f)|^{2} &= (1 + cos(2\pi fTeD))^{2} + (-sin(2\pi fTeD))^{2}\\
+             &= 1 + cos^{2}(2\pi fTeD) + 2cos^{2}(2\pi fTeD) + sin^{2}(2\pi fTeD)\\
+             &= 2 + 2cos^{2}(2\pi fTeD)\\
+\end{align*}
+
+%|H(f)|²
+%figure D pair + impair, avec Te=1/16000 et f=[0 Fe/2 Fe]
+%figure f = toutes les valeurs?
+
+Ici, on a $Fe = 16$ kHz $\iff Te = \frac{1}{16000}$ s :
+
+\begin{figure}[!ht]
+		\begin{center}
+			\includegraphics[width=1\textwidth]{img/modulePeigneDpair}
+			\label{fig:modulePeigneDpair}
+			\caption{Module de la fonction de transfert du filtre peigne avec D pair}
+		\end{center}
+\end{figure}
+
+\begin{figure}[!ht]
+		\begin{center}
+			\includegraphics[width=1\textwidth]{img/modulePeigneDpair2}
+			\label{fig:modulePeigneDpair2}
+			\caption{Module de la fonction de transfert du filtre peigne avec D pair}
+		\end{center}
+\end{figure}
+
+\begin{figure}[!ht]
+		\begin{center}
+			\includegraphics[width=1\textwidth]{img/modulePeigneDimpair}
+			\label{fig:modulePeigneDimpair}
+			\caption{Module de la fonction de transfert du filtre peigne avec D impair}
+		\end{center}
+\end{figure}
+
+\begin{figure}[!ht]
+		\begin{center}
+			\includegraphics[width=1\textwidth]{img/modulePeigneDimpair2}
+			\label{fig:modulePeigneDimpair2}
+			\caption{Module de la fonction de transfert du filtre peigne avec D impair}
+		\end{center}
+\end{figure}
+
+\clearpage
+
+\subsection{Partie pratique}
+
+- Etudier la fonction de transfert du filtre (impulsion en entrée). Etudier le module de la fonction de transfert. On prendra D=20
+
+- Tester le filtre sur le signal audio avec différentes valeurs de D (de 20 à 5000). Quels sont les effets sonores observés ?
+
 \section{Filtre passe Tout}
 
+\subsection{Partie théorique}
+
+Soit le filtre passe-tout : $y(k) = −gx(k) + x(k − D) + gy(k − D)$
+
+Donner la fonction de transfert en Z correspondant.
+
+\begin{align*}
+  &y(k) - gy(k - D) = -gk(k) + x(k - D)\\
+  \iff &Y(Z) - gZ^{-D}Y(Z) = -gX(Z) + Z^{-D}X(Z)\\
+  \iff &(1 - gZ^{-D})Y(Z) = (-g + Z^{-D})X(Z)\\
+  \iff &Y(Z) = \frac{-g + Z^{-D}}{1 - gZ^{-D}}X(Z)\\
+\end{align*}
+Or, $Y(Z) = X(Z).H(Z)$ donc $H(Z) = \frac{-g + Z^{-D}}{1 - gZ^{-D}}$.\\
+
+%passer par la forme somme des anx(k) - somme des bny(k)
+%$H(Z) = -g + Z^{-D} + gZ
+
+- Dans quelles conditions ce filtre est-il stable ?
+
+%TODO
+
+\subsection{Partie pratique}
+
+- Etudier la fonction de transfert du filtre (impulsion en entrée). On prendra D=20 et g=0.5.
+- Tester le filtre sur le signal audio avec différentes valeurs de D (de 20 à 5000). Quels sont
+les effets sonores observés ?
+
 \section{Réverbération}
+
+Partie pratique
+- La réverbération est obtenue grâce à la série de filtres suivante :
+-Tester ce filtre sur le signal audio.
