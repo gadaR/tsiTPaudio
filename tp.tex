@@ -34,3 +34,10 @@ $H(f)=\frac{1-e^{-2\pi jfTe(D+1)}}{1- e^{-2\pi jfTe}}\\
 |H(f)|=\frac{(1-cos(2\pi jfTe(D+1)))^{2}+ sin^{2}(2\pi jfTe(D+1))}{(1-cos(2\pi jfTe))^{2}+ sin^{2}(2\pi jfTe)}\\
 |H(f)|=\frac{2-2cos(2\pi jfTe(D+1))}{2-2cos(2\pi jfTe)}\\
 $
+
+Représentation du module du filtre :\\
+La représentation du module du filtre n'est pas envisageable avec le résultat obtenu à l'étape précédente, car lorsque $cos(2\pi jfTe)=1$ nous obtenons une forme indeterminée. Nous allons donc utiliser la règle de l'Hopital.\\
+$\lim\limits_{z^{-1}\rightarrow 1}H(z)=\lim\limits_{z^{-1}\rightarrow 1} \frac{1-z^{-(D+1)}}{1- z^{-1}}\\
+\lim\limits_{z^{-1}\rightarrow 1}H(z)=\frac{(D+1)z^{-D-2}}{z^{-2}}\\
+\lim\limits_{z^{-1}\rightarrow 1}H(z)=D+1\\
+$\\
