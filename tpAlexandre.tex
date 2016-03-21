@@ -68,6 +68,8 @@ Ici, on a $Fe = 16$ kHz $\iff Te = \frac{1}{16000}$ s :
 
 - Tester le filtre sur le signal audio avec différentes valeurs de D (de 20 à 5000). Quels sont les effets sonores observés ?
 
+Pour $D = 5000$ le son est "dupliqué" avec un délai. On entend le son deux fois à quelques dixièmes de secondes d'intervalle. Lorsqu'on diminue les valeurs de D, le son reste dupliqué et joué en double avec un délai, mais ce-dernier est plus court. Pour $D = 20$, aucune différence n'est perçue à l'oreille nue.
+
 \section{Filtre passe Tout}
 
 \subsection{Partie théorique}
@@ -89,13 +91,19 @@ Or, $Y(Z) = X(Z).H(Z)$ donc $H(Z) = \frac{-g + Z^{-D}}{1 - gZ^{-D}}$.\\
 
 - Dans quelles conditions ce filtre est-il stable ?
 
+%\begin{align*}
+%  &Filtre stable\\
+%  \iff &somme |h(k)| < infini\\
+%\end{align*}
+
 %TODO
 
 \subsection{Partie pratique}
 
 - Etudier la fonction de transfert du filtre (impulsion en entrée). On prendra D=20 et g=0.5.
-- Tester le filtre sur le signal audio avec différentes valeurs de D (de 20 à 5000). Quels sont
-les effets sonores observés ?
+- Tester le filtre sur le signal audio avec différentes valeurs de D (de 20 à 5000). Quels sont les effets sonores observés ?
+
+Pour $D = 5000$, on obtient un effet "echo" : le son se répète plusieurs fois avec un court délai (de l'ordre de quelques dixièmes de secondes) et de moins en moins fort. Lorsqu'on fait diminuer la valeur de D on obtient toujours un "echo" mais avec un délai plus court entre chaque itération du son entrant. Pour $D = 20$ il n'y a plus d'echo mais on remarque que le son en sortie sature bien moins que l'original : le bruit est beaucoup aténué.
 
 \section{Réverbération}
 

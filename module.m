@@ -18,4 +18,4 @@ figure(2);
 stem(f, mod, '--b');
 xlabel('f');
 ylabel('|H(f)|²');
-axis([1 Fe 0 5])
+axis([1 Fe 0 5]);
