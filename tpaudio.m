@@ -9,6 +9,9 @@ N=length(Signal);
 
 Te = 1/Fe;
 t = (0 : N-1) * Te;
+f = ((0 : N - 1)/N ) * Fe;
+
+
 fourrierTransform = fft(Signal);
 plot(t,fourrierTransform)
 title('transformee')
@@ -16,10 +19,11 @@ title('transformee')
 % module
 figure
 module = abs(fourrierTransform) ;
-plot(t,module)
-title('module')
-
-
+plot(f,module)
+title('Module du signal sonore')
+xlabel('f');
+ylabel('|H(f)|');
+figure;
 %--------------------
  %passe bas
 imp = zeros(1,N);
@@ -66,7 +70,7 @@ soundsc(res/max(res),Fe) ;
 
 f = ((0 : N - 1)/N ) * Fe;
 f2 = f-(Fe/2)
-h = passeTout(20,imp);
+h = peigne(33,imp);
 fourrierTransform = fft(h);
 plot(f,fourrierTransform)
 title('transformee')
@@ -75,7 +79,9 @@ title('transformee')
 figure
 module = abs(fourrierTransform) ;
 plot(f,module)
-title('module')
+title('Module du peigne D=33 (impair)')
+xlabel('f');
+ylabel('|H(f)|');
 
 %TFD
 figure;
