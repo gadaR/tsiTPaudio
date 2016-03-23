@@ -70,7 +70,7 @@ soundsc(res/max(res),Fe) ;
 
 f = ((0 : N - 1)/N ) * Fe;
 f2 = f-(Fe/2)
-h = peigne(33,imp);
+h = passeTout(20,imp);
 fourrierTransform = fft(h);
 plot(f,fourrierTransform)
 title('transformee')
@@ -79,7 +79,7 @@ title('transformee')
 figure
 module = abs(fourrierTransform) ;
 plot(f,module)
-title('Module du peigne D=33 (impair)')
+title('Module du passe tou D=20')
 xlabel('f');
 ylabel('|H(f)|');
 
