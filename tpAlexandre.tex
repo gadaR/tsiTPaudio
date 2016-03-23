@@ -30,7 +30,7 @@ Ici, on a $Fe = 16$ kHz $\iff Te = \frac{1}{16000}$ s :
 
 \begin{figure}[!ht]
 		\begin{center}
-			\includegraphics[width=1\textwidth]{img/modulePeigneDpair}
+			\includegraphics[width=1\textwidth]{img/modulePeigneDpairFull}
 			\label{fig:modulePeigneDpair}
 			\caption{Module de la fonction de transfert du filtre peigne avec D pair}
 		\end{center}
@@ -38,24 +38,8 @@ Ici, on a $Fe = 16$ kHz $\iff Te = \frac{1}{16000}$ s :
 
 \begin{figure}[!ht]
 		\begin{center}
-			\includegraphics[width=1\textwidth]{img/modulePeigneDpair2}
-			\label{fig:modulePeigneDpair2}
-			\caption{Module de la fonction de transfert du filtre peigne avec D pair}
-		\end{center}
-\end{figure}
-
-\begin{figure}[!ht]
-		\begin{center}
-			\includegraphics[width=1\textwidth]{img/modulePeigneDimpair}
+			\includegraphics[width=1\textwidth]{img/modulePeigneDimpairFull}
 			\label{fig:modulePeigneDimpair}
-			\caption{Module de la fonction de transfert du filtre peigne avec D impair}
-		\end{center}
-\end{figure}
-
-\begin{figure}[!ht]
-		\begin{center}
-			\includegraphics[width=1\textwidth]{img/modulePeigneDimpair2}
-			\label{fig:modulePeigneDimpair2}
 			\caption{Module de la fonction de transfert du filtre peigne avec D impair}
 		\end{center}
 \end{figure}
@@ -89,7 +73,7 @@ Or, $Y(Z) = X(Z).H(Z)$ donc $H(Z) = \frac{-g + Z^{-D}}{1 - gZ^{-D}}$.\\
 %passer par la forme somme des anx(k) - somme des bny(k)
 %$H(Z) = -g + Z^{-D} + gZ
 
-- Dans quelles conditions ce filtre est-il stable ?
+%- Dans quelles conditions ce filtre est-il stable ?
 
 %\begin{align*}
 %  &Filtre stable\\
@@ -100,7 +84,7 @@ Or, $Y(Z) = X(Z).H(Z)$ donc $H(Z) = \frac{-g + Z^{-D}}{1 - gZ^{-D}}$.\\
 
 \subsection{Partie pratique}
 
-- Etudier la fonction de transfert du filtre (impulsion en entrée). On prendra D=20 et g=0.5.
+- Etudier la fonction de transfert du filtre (impulsion en entrée). On prendra D=20 et g=0.5.\\
 - Tester le filtre sur le signal audio avec différentes valeurs de D (de 20 à 5000). Quels sont les effets sonores observés ?
 
 Pour $D = 5000$, on obtient un effet "echo" : le son se répète plusieurs fois avec un court délai (de l'ordre de quelques dixièmes de secondes) et de moins en moins fort. Lorsqu'on fait diminuer la valeur de D on obtient toujours un "echo" mais avec un délai plus court entre chaque itération du son entrant. Pour $D = 20$ il n'y a plus d'echo mais on remarque que le son en sortie sature bien moins que l'original : le bruit est beaucoup aténué.
